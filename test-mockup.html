@@ -92,6 +92,15 @@ footer{background:#0a1628;padding:50px 40px 30px;}
   .footer-grid{grid-template-columns:1fr;gap:30px;}
   .hero-content{padding:80px 20px 60px;}
 }
+
+  .btn-main{display:inline-block;}
+  .hero-btns{flex-wrap:wrap;gap:12px;}
+  @media(max-width:600px){
+    .btn-main{font-size:14px;padding:13px 24px;width:auto;max-width:100%;}
+    .hero-btns{flex-direction:column;align-items:center;}
+    .why-inner .btn-main{display:block;text-align:center;margin-top:20px;}
+  }
+
 </style>
 </head>
 <body>
@@ -227,8 +236,8 @@ footer{background:#0a1628;padding:50px 40px 30px;}
             <p style="font-size:13px;color:rgba(255,255,255,0.65);margin:0;">We work directly with your insurance company to maximize your claim.</p>
           </div>
         </div>
-        <div style="margin-top:32px;">
-          <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" class="btn-main" style="font-size:15px;padding:14px 32px;">Get a Free Estimate &rarr;</a>
+        <div style="margin-top:32px;clear:both;">
+          <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" class="btn-main" style="display:inline-block;" style="font-size:15px;padding:14px 32px;">Get a Free Estimate &rarr;</a>
         </div>
       </div>
       <div>
@@ -453,7 +462,7 @@ footer{background:#0a1628;padding:50px 40px 30px;}
   </section>
   <section>
     <div class="max" style="display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;flex-wrap:wrap;">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="About us" style="width:100%;height:420px;object-fit:cover;border-radius:16px;">
+      <img src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=700&q=80" alt="About us" style="width:100%;height:420px;object-fit:cover;border-radius:16px;">
       <div>
         <div class="tag">OUR STORY</div>
         <h2 class="h2">Built on Quality, Driven by Results</h2>
