@@ -1,619 +1,585 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Colony Roofers - Atlanta's Premier Roofing Experts</title>
-    <!-- Google Fonts for a modern, bold look -->
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        /* CSS Variables for easy color and font management */
-        :root {
-            --dark-navy: #0a1628;
-            --copper-accent: #c17f3d;
-            --light-text: #f8f8f8;
-            --subtle-gray: #cccccc;
-            --bg-gradient-start: #060e19; /* Slightly darker than main navy for gradient depth */
-            --header-font: 'Poppins', sans-serif;
-            --body-font: 'Roboto', sans-serif;
-            --container-width: 1200px;
-            --spacing-unit: 1rem;
-            --border-radius: 8px;
-            --transition-speed: 0.3s ease-in-out;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Demo Business | Dallas Roofing Experts</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+body{font-family:'Inter',sans-serif;color:#111;background:#fff;overflow-x:hidden;}
+a{text-decoration:none;}
+.page{display:none;}
+.page.active{display:block;}
 
-        /* Base Styles & Resets */
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+/* BANNER */
+.banner{background:#c17f3d;color:#fff;text-align:center;padding:10px 20px;font-size:13px;font-weight:700;letter-spacing:0.5px;}
+.banner a{color:#fff;font-weight:900;text-decoration:underline;}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* NAV */
+nav{background:#0a1628;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;z-index:999;}
+.logo{color:#fff;font-size:20px;font-weight:900;cursor:pointer;}
+.logo span{color:#c17f3d;}
+.nav-links{display:flex;gap:24px;align-items:center;}
+.nav-links a{color:rgba(255,255,255,0.75);font-size:14px;font-weight:600;cursor:pointer;transition:color 0.2s;}
+.nav-links a:hover{color:#fff;}
+.nav-cta{background:#c17f3d;color:#fff !important;padding:10px 22px;border-radius:8px;font-weight:800 !important;font-size:14px !important;}
 
-        body {
-            font-family: var(--body-font);
-            color: var(--light-text);
-            background-color: var(--dark-navy);
-            line-height: 1.6;
-            -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
-        }
+/* HERO */
+.hero{position:relative;min-height:600px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
+.hero-bg{position:absolute;inset:0;background-image:url('https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=1400&q=80');background-size:cover;background-position:center;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,0.85),rgba(0,0,0,0.65));}
+.hero-content{position:relative;z-index:2;padding:100px 40px 80px;max-width:800px;}
+.hero-badge{display:inline-block;background:rgba(255,255,255,0.12);border:1px solid rgba(255,255,255,0.3);border-radius:100px;padding:8px 22px;font-size:13px;font-weight:700;color:#fff;margin-bottom:24px;letter-spacing:1px;}
+.hero h1{color:#fff;font-size:clamp(2.2rem,5vw,4rem);font-weight:900;line-height:1.1;margin-bottom:20px;}
+.hero h1 span{color:#c17f3d;}
+.hero p{color:rgba(255,255,255,0.85);font-size:18px;max-width:560px;margin:0 auto 36px;line-height:1.7;}
+.hero-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;}
+.btn-main{background:#c17f3d;color:#fff;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:800;box-shadow:0 4px 24px rgba(0,0,0,0.3);transition:transform 0.2s;}
+.btn-main:hover{transform:translateY(-2px);}
+.btn-ghost{background:transparent;color:#fff;padding:16px 36px;border-radius:50px;font-size:16px;font-weight:700;border:2px solid rgba(255,255,255,0.5);transition:all 0.2s;cursor:pointer;}
+.btn-ghost:hover{border-color:#fff;background:rgba(255,255,255,0.1);}
 
-        a {
-            text-decoration: none;
-            color: var(--copper-accent);
-            transition: color var(--transition-speed);
-        }
+/* TRUST BAR */
+.trust-bar{background:#f8f9fa;border-bottom:1px solid #e8ecf0;padding:18px 40px;display:flex;justify-content:center;gap:48px;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:10px;font-size:14px;font-weight:600;color:#333;}
 
-        a:hover {
-            color: var(--light-text);
-        }
+/* CARDS */
+.cards-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;}
+.card{background:#fff;border:1px solid #e8ecf0;border-radius:12px;overflow:hidden;transition:all 0.25s;cursor:pointer;}
+.card:hover{border-color:#c17f3d;box-shadow:0 8px 30px rgba(0,0,0,0.1);transform:translateY(-4px);}
 
-        img {
-            max-width: 100%;
-            height: auto;
-            display: block;
-        }
+/* GALLERY */
+.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:220px 220px;gap:10px;max-width:1100px;margin:0 auto;padding:0 40px 80px;}
+.gitem{overflow:hidden;border-radius:12px;position:relative;}
+.gitem img{width:100%;height:100%;object-fit:cover;transition:transform 0.4s;}
+.gitem:hover img{transform:scale(1.06);}
+.gcap{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,0.8));color:#fff;padding:20px 14px 12px;font-size:13px;font-weight:700;}
 
-        h1, h2, h3, h4, h5, h6 {
-            font-family: var(--header-font);
-            color: var(--light-text);
-            margin-bottom: var(--spacing-unit) * 1.5;
-            font-weight: 700;
-        }
+/* CONTACT FORM */
+.form-group{margin-bottom:20px;}
+.form-group label{display:block;font-size:14px;font-weight:700;color:#333;margin-bottom:6px;}
+.form-group input,.form-group select,.form-group textarea{width:100%;padding:13px 16px;border:1px solid #ddd;border-radius:10px;font-size:15px;font-family:inherit;outline:none;transition:border-color 0.2s;background:#fff;}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:#c17f3d;}
+.form-group textarea{min-height:110px;resize:vertical;}
+.form-submit{width:100%;padding:16px;background:#c17f3d;color:#fff;font-weight:800;font-size:16px;border:none;border-radius:50px;cursor:pointer;font-family:inherit;transition:opacity 0.2s;}
+.form-submit:hover{opacity:0.9;}
 
-        h1 { font-size: 3.8rem; line-height: 1.1; font-weight: 800; }
-        h2 { font-size: 2.8rem; margin-top: 3rem; }
-        h3 { font-size: 2rem; }
-        p { margin-bottom: var(--spacing-unit); }
+section{padding:80px 40px;}
+.max{max-width:1100px;margin:0 auto;}
+.center{text-align:center;}
+.tag{color:#c17f3d;font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px;}
+.h2{font-size:clamp(1.8rem,3.5vw,2.8rem);font-weight:900;color:#0a1628;margin-bottom:16px;line-height:1.2;}
+.sub{color:#666;font-size:17px;line-height:1.7;max-width:620px;margin:0 auto 50px;}
 
-        /* Utility Classes */
-        .container {
-            max-width: var(--container-width);
-            margin: 0 auto;
-            padding: 0 var(--spacing-unit) * 2;
-        }
+footer{background:#0a1628;padding:50px 40px 30px;}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr;gap:50px;max-width:1100px;margin:0 auto 40px;}
+.footer-logo{color:#fff;font-size:22px;font-weight:900;margin-bottom:14px;}
+.footer-logo span{color:#c17f3d;}
+.footer-desc{color:rgba(255,255,255,0.55);font-size:14px;line-height:1.8;}
+.footer-col h4{color:#fff;font-size:14px;font-weight:800;margin-bottom:16px;}
+.footer-col a{display:block;color:rgba(255,255,255,0.55);font-size:14px;margin-bottom:10px;cursor:pointer;transition:color 0.2s;}
+.footer-col a:hover{color:#c17f3d;}
+.footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:24px;text-align:center;color:rgba(255,255,255,0.35);font-size:13px;max-width:1100px;margin:0 auto;}
 
-        .text-center {
-            text-align: center;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background-color: var(--copper-accent);
-            color: var(--dark-navy);
-            padding: var(--spacing-unit) * 1.2 var(--spacing-unit) * 2.5;
-            border-radius: var(--border-radius);
-            font-family: var(--header-font);
-            font-weight: 700;
-            font-size: 1.2rem;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
-            border: none;
-            cursor: pointer;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-        }
-
-        .cta-button:hover {
-            background-color: #e09f53; /* A slightly lighter copper */
-            transform: translateY(-3px) scale(1.02);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
-            color: var(--dark-navy); /* Ensure text stays dark for contrast */
-        }
-
-        /* Sticky Mockup Banner */
-        #mockup-banner {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            background-color: #333; /* A neutral dark grey */
-            color: #eee;
-            text-align: center;
-            padding: 0.8rem 0;
-            font-size: 0.9rem;
-            font-family: var(--body-font);
-            z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            letter-spacing: 0.03em;
-        }
-
-        /* Main content offset for fixed banner */
-        main, footer {
-            padding-top: 50px; /* Adjust based on banner height */
-        }
-
-        /* Hero Section */
-        #hero {
-            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--dark-navy) 100%);
-            min-height: 90vh; /* Make sure it takes up most of the viewport */
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-            text-align: center;
-            padding: var(--spacing-unit) * 4 0;
-            border-bottom: 5px solid var(--copper-accent); /* A subtle divider */
-        }
-
-        /* Hero Background Overlay for subtle texture */
-        #hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" opacity="0.05"><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 L 0 10" fill="none" stroke="white" stroke-width="0.2"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>') repeat;
-            opacity: 0.05; /* Very subtle */
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 900px;
-            padding: var(--spacing-unit) * 2;
-        }
-
-        #hero h1 {
-            font-size: 4.5rem;
-            margin-bottom: var(--spacing-unit) * 1.5;
-            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-            line-height: 1.1;
-            background: -webkit-linear-gradient(left, var(--light-text), var(--copper-accent));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        #hero p {
-            font-size: 1.5rem;
-            margin-bottom: var(--spacing-unit) * 2.5;
-            color: var(--subtle-gray);
-            max-width: 700px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        #hero .cta-button {
-            font-size: 1.6rem;
-            padding: var(--spacing-unit) * 1.5 var(--spacing-unit) * 3;
-        }
-
-        /* Section Styling */
-        section {
-            padding: var(--spacing-unit) * 5 0;
-            text-align: center;
-        }
-
-        section:nth-of-type(even) {
-            background-color: #0c1a30; /* Slightly lighter navy for contrast */
-        }
-
-        section h2 {
-            font-size: 3.2rem;
-            margin-bottom: var(--spacing-unit) * 3;
-            position: relative;
-            padding-bottom: 15px;
-            display: inline-block;
-            color: var(--light-text);
-        }
-
-        section h2::after {
-            content: '';
-            position: absolute;
-            left: 50%;
-            bottom: 0;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 5px;
-            background-color: var(--copper-accent);
-            border-radius: 3px;
-        }
-
-        /* Services Grid */
-        #services .services-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: var(--spacing-unit) * 2.5;
-            margin-top: var(--spacing-unit) * 3;
-            padding: 0 var(--spacing-unit);
-        }
-
-        .service-card {
-            background-color: #12233c; /* Darker card background */
-            padding: var(--spacing-unit) * 2.5;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            text-align: center;
-            transition: transform var(--transition-speed), background-color var(--transition-speed), box-shadow var(--transition-speed);
-            border: 1px solid transparent;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
-
-        .service-card:hover {
-            transform: translateY(-8px);
-            background-color: var(--dark-navy); /* Slightly darkens on hover */
-            border-color: var(--copper-accent);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .service-card .icon {
-            font-size: 3.5rem;
-            margin-bottom: var(--spacing-unit);
-            color: var(--copper-accent);
-            line-height: 1; /* Ensure emoji doesn't add extra space */
-            animation: pulse-icon 2s infinite ease-in-out;
-        }
-
-        .service-card h3 {
-            font-size: 1.8rem;
-            margin-top: var(--spacing-unit);
-            margin-bottom: var(--spacing-unit);
-            color: var(--light-text);
-        }
-
-        .service-card p {
-            font-size: 1rem;
-            color: var(--subtle-gray);
-            flex-grow: 1; /* Allow description to take available space */
-        }
-
-        @keyframes pulse-icon {
-            0% { transform: scale(1); }
-            50% { transform: scale(1.05); }
-            100% { transform: scale(1); }
-        }
-
-        /* Why Choose Us */
-        #why-choose-us {
-            background: linear-gradient(to top, var(--bg-gradient-start), var(--dark-navy));
-        }
-
-        #why-choose-us .benefits-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: var(--spacing-unit) * 2.5;
-            margin-top: var(--spacing-unit) * 3;
-            padding: 0 var(--spacing-unit);
-        }
-
-        .benefit-item {
-            background-color: #12233c;
-            padding: var(--spacing-unit) * 2;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            text-align: left;
-            display: flex;
-            align-items: flex-start;
-            transition: transform var(--transition-speed), background-color var(--transition-speed), box-shadow var(--transition-speed);
-            border-left: 5px solid var(--copper-accent); /* Strong left border accent */
-        }
-
-        .benefit-item:hover {
-            transform: translateY(-5px);
-            background-color: #1a2f4a; /* Slightly lighter on hover */
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
-        }
-
-        .benefit-item .icon {
-            font-size: 2.2rem;
-            color: var(--copper-accent);
-            margin-right: var(--spacing-unit) * 1.5;
-            min-width: 2.2rem; /* Keep icon size consistent */
-        }
-
-        .benefit-item .content h3 {
-            font-size: 1.5rem;
-            margin-top: 0;
-            margin-bottom: var(--spacing-unit) * 0.5;
-            color: var(--light-text);
-        }
-
-        .benefit-item .content p {
-            font-size: 0.95rem;
-            color: var(--subtle-gray);
-            margin-bottom: 0;
-        }
-
-        /* Testimonials Section */
-        #testimonials {
-            background-color: #0c1a30;
-            border-top: 1px solid rgba(193, 127, 61, 0.2);
-        }
-
-        #testimonials .testimonials-container {
-            display: flex;
-            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
-            justify-content: center;
-            gap: var(--spacing-unit) * 2;
-            margin-top: var(--spacing-unit) * 3;
-            padding: 0 var(--spacing-unit);
-        }
-
-        .testimonial-card {
-            background-color: #12233c;
-            padding: var(--spacing-unit) * 2.5;
-            border-radius: var(--border-radius);
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            flex: 1 1 300px; /* Allows flexibility and minimum width */
-            max-width: 400px;
-            text-align: left;
-            display: flex;
-            flex-direction: column;
-            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
-            border-bottom: 4px solid var(--copper-accent);
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-        }
-
-        .testimonial-card .stars {
-            color: gold;
-            font-size: 1.5rem;
-            margin-bottom: var(--spacing-unit);
-            letter-spacing: 0.1em;
-        }
-
-        .testimonial-card p {
-            font-style: italic;
-            margin-bottom: var(--spacing-unit) * 1.5;
-            color: var(--subtle-gray);
-            font-size: 1.05rem;
-            line-height: 1.7;
-            flex-grow: 1; /* Allows quote to take available height */
-        }
-
-        .testimonial-card .author {
-            font-weight: 700;
-            color: var(--copper-accent);
-            font-size: 1.1rem;
-            margin-top: auto; /* Pushes author to the bottom */
-        }
-
-        /* Contact/CTA Footer */
-        #contact-cta {
-            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--bg-gradient-start) 100%);
-            padding: var(--spacing-unit) * 5 0;
-            text-align: center;
-            border-top: 5px solid var(--copper-accent);
-        }
-
-        #contact-cta .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 0 var(--spacing-unit) * 2;
-        }
-
-        #contact-cta h3 {
-            font-size: 2.5rem;
-            margin-bottom: var(--spacing-unit) * 1.5;
-            color: var(--light-text);
-        }
-
-        #contact-cta p {
-            font-size: 1.2rem;
-            margin-bottom: var(--spacing-unit) * 2.5;
-            color: var(--subtle-gray);
-        }
-
-        #contact-cta .contact-info {
-            margin-top: var(--spacing-unit) * 3;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: var(--spacing-unit) * 2;
-        }
-
-        .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: var(--spacing-unit) * 0.8;
-            color: var(--subtle-gray);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .contact-info p .icon {
-            font-size: 1.5rem;
-            color: var(--copper-accent);
-            margin-right: var(--spacing-unit) * 0.8;
-            line-height: 1;
-        }
-
-        .contact-info a {
-            font-weight: 700;
-            transition: color var(--transition-speed);
-        }
-        .contact-info a:hover {
-            color: var(--light-text);
-        }
-
-
-        /* Mobile Responsiveness */
-        @media (max-width: 992px) {
-            h1 { font-size: 3.2rem; }
-            h2 { font-size: 2.4rem; }
-            h3 { font-size: 1.8rem; }
-            #hero p { font-size: 1.3rem; }
-            #hero .cta-button { font-size: 1.4rem; padding: var(--spacing-unit) * 1.2 var(--spacing-unit) * 2.2; }
-            section h2 { font-size: 2.8rem; }
-        }
-
-        @media (max-width: 768px) {
-            #mockup-banner { font-size: 0.8rem; padding: 0.6rem 0; }
-            main, footer { padding-top: 40px; } /* Adjust for smaller banner */
-            h1 { font-size: 2.5rem; }
-            h2 { font-size: 2rem; }
-            h3 { font-size: 1.5rem; }
-            #hero p { font-size: 1.1rem; margin-bottom: var(--spacing-unit) * 2; }
-            #hero .cta-button { font-size: 1.2rem; padding: var(--spacing-unit) var(--spacing-unit) * 2; }
-
-            .service-card, .benefit-item, .testimonial-card {
-                padding: var(--spacing-unit) * 1.5;
-            }
-
-            .service-card .icon { font-size: 3rem; }
-            .benefit-item .icon { font-size: 1.8rem; margin-right: var(--spacing-unit); }
-
-            #contact-cta h3 { font-size: 2rem; }
-            #contact-cta p { font-size: 1rem; }
-        }
-
-        @media (max-width: 480px) {
-            #mockup-banner { padding: 0.5rem 0; font-size: 0.75rem;}
-            main, footer { padding-top: 35px; }
-            h1 { font-size: 2rem; }
-            h2 { font-size: 1.8rem; }
-            section h2::after { width: 60px; height: 4px; }
-            .hero-content { padding: var(--spacing-unit); }
-            #hero .cta-button { font-size: 1rem; padding: var(--spacing-unit) * 0.8 var(--spacing-unit) * 1.5; }
-
-            .services-grid, .benefits-grid, .testimonials-container {
-                gap: var(--spacing-unit) * 1.5;
-                padding: 0 var(--spacing-unit) * 0.5;
-            }
-            .testimonial-card {
-                flex: 1 1 90%; /* Take almost full width on very small screens */
-            }
-            .contact-info p {
-                flex-direction: column;
-                margin-bottom: var(--spacing-unit);
-            }
-            .contact-info p .icon {
-                margin-right: 0;
-                margin-bottom: var(--spacing-unit) * 0.5;
-            }
-        }
-
-    </style>
+@media(max-width:768px){
+  nav{padding:14px 20px;}
+  .nav-links .hide{display:none;}
+  section{padding:50px 20px;}
+  .gallery-grid{grid-template-columns:1fr 1fr;grid-template-rows:auto;padding:0 20px 50px;}
+  .gitem:first-child{grid-row:span 1;}
+  .trust-bar{gap:20px;padding:14px 20px;}
+  .footer-grid{grid-template-columns:1fr;gap:30px;}
+  .hero-content{padding:80px 20px 60px;}
+}
+</style>
 </head>
 <body>
-    <!-- Sticky Mockup Banner -->
-    <div id="mockup-banner">
-        This is a FREE website mockup built for Colony Roofers by ConnorSync Marketing
+
+<!-- BANNER -->
+<div class="banner">
+  🎉 This is a FREE demo website built for <strong>Demo Business</strong> by Vireon Marketing &mdash;
+  <a href="https://calendly.com/jacksonbartholomewreal" target="_blank">click here to get it live</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="logo" onclick="showPage('home')">Demo Business<span>.</span></div>
+  <div class="nav-links">
+    <a class="hide" onclick="showPage('services')">Services</a>
+    <a class="hide" onclick="showPage('gallery')">Gallery</a>
+    <a class="hide" onclick="showPage('about')">About</a>
+    <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" class="nav-cta">Book Now</a>
+  </div>
+</nav>
+
+<!-- ========== HOME ========== -->
+<div id="page-home" class="page active">
+
+  <div class="hero">
+    <div class="hero-bg"></div>
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <div class="hero-badge">⭐ #1 Rated Roofers in Dallas</div>
+      <h1>Demo Business<br><span>Trusted Roofing. Guaranteed Results.</span></h1>
+      <p>From leak repairs to full replacements — we protect what matters most.</p>
+      <div class="hero-btns">
+        <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" class="btn-main">Get a Free Quote &rarr;</a>
+        <span class="btn-ghost" onclick="showPage('services')">Our Services</span>
+      </div>
     </div>
+  </div>
 
-    <main>
-        <!-- Hero Section -->
-        <section id="hero">
-            <div class="hero-content container">
-                <h1>Atlanta's Most Trusted Roofers: Excellence Above All</h1>
-                <p>Protecting homes and businesses across Atlanta with unmatched quality, reliability, and local expertise. Your roof is our priority.</p>
-                <a href="tel:4704659624" class="cta-button">📞 Call for a FREE Estimate: (470) 465-9624</a>
-            </div>
-        </section>
+  <div class="trust-bar">
+    <div class="trust-item">⭐ 5-Star Rated</div>
+    <div class="trust-item">✅ Licensed &amp; Insured</div>
+    <div class="trust-item">📍 Dallas &amp; Surrounding Areas</div>
+    <div class="trust-item">📞 (555) 000-0000</div>
+  </div>
 
-        <!-- Services Section -->
-        <section id="services">
-            <div class="container">
-                <h2>Our Expert Roofing Services</h2>
-                <div class="services-grid">
-                    <div class="service-card">
-                        <span class="icon" role="img" aria-label="House">🏠</span>
-                        <h3>Residential Roofing</h3>
-                        <p>From asphalt shingles to metal and tile, we provide comprehensive roofing solutions for homes of all sizes. Quality materials and expert installation guaranteed.</p>
-                    </div>
-                    <div class="service-card">
-                        <span class="icon" role="img" aria-label="Building">🏢</span>
-                        <h3>Commercial Roofing</h3>
-                        <p>Specialized flat roofing, TPO, EPDM, and modified bitumen systems for businesses. Durable, cost-effective solutions tailored to your commercial property.</p>
-                    </div>
-                    <div class="service-card">
-                        <span class="icon" role="img" aria-label="Wrench and Hammer">🛠️</span>
-                        <h3>Roof Repair & Maintenance</h3>
-                        <p>Prompt and reliable leak detection, storm damage repair, and preventative maintenance to extend your roof's lifespan and protect your investment.</p>
-                    </div>
-                    <div class="service-card">
-                        <span class="icon" role="img" aria-label="Tools">🏗️</span>
-                        <h3>Full Roof Replacement</h3>
-                        <p>When repairs aren't enough, we offer seamless roof replacement services with minimal disruption, ensuring a new, long-lasting, and beautiful roof.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Why Choose Us Section -->
-        <section id="why-choose-us">
-            <div class="container">
-                <h2>Why Choose Colony Roofers?</h2>
-                <div class="benefits-grid">
-                    <div class="benefit-item">
-                        <span class="icon" role="img" aria-label="Checkmark">✅</span>
-                        <div class="content">
-                            <h3>Unrivaled Local Expertise</h3>
-                            <p>As Atlantans ourselves, we understand the unique weather challenges and architectural styles of our community. We build roofs that last in Georgia.</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="icon" role="img" aria-label="Star">⭐</span>
-                        <div class="content">
-                            <h3>Premium Quality Materials</h3>
-                            <p>We partner with industry-leading manufacturers to use only the highest-grade roofing materials, ensuring durability, efficiency, and aesthetic appeal.</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="icon" role="img" aria-label="Team">🤝</span>
-                        <div class="content">
-                            <h3>Customer-First Service</h3>
-                            <p>Your satisfaction is our priority. We offer transparent communication, detailed estimates, and a friendly, professional team from start to finish.</p>
-                        </div>
-                    </div>
-                    <div class="benefit-item">
-                        <span class="icon" role="img" aria-label="Shield">🛡️</span>
-                        <div class="content">
-                            <h3>Guaranteed Workmanship</h3>
-                            <p>We stand by our work. All our roofing projects come with robust warranties on both materials and labor, giving you complete peace of mind.</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Testimonials Section -->
-        <section id="testimonials">
-            <div class="container">
-                <h2>What Our Customers Say</h2>
-                <div class="testimonials-container">
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"Colony Roofers transformed our old, leaky roof into a masterpiece! Their team was professional, efficient, and incredibly knowledgeable. The attention to detail was exceptional. Highly recommend for any roofing needs in Atlanta!"</p>
-                        <div class="author">— Sarah L., Midtown Atlanta</div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"After a recent storm, I needed urgent roof repairs. Colony Roofers responded quickly, assessed the damage thoroughly, and provided a fair estimate. The repair was done flawlessly and ahead of schedule. Truly lifesavers!"</p>
-                        <div class="author">— Mark T., Buckhead, GA</div>
-                    </div>
-                    <div class="testimonial-card">
-                        <div class="stars">⭐⭐⭐⭐⭐</div>
-                        <p>"We used Colony Roofers for our commercial property's TPO roof replacement. Their expertise in commercial systems was evident. The project was managed perfectly, stayed within budget, and the new roof looks fantastic. A top-tier company!"</p>
-                        <div class="author">— Emily R., Downtown Business Owner</div>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <!-- Contact/CTA Footer -->
-    <footer id="contact-cta">
-        <div class="footer-content">
-            <h3>Ready for a Reliable Roof?</h3>
-            <p>Don't wait for a leak to become a problem. Contact Colony Roofers today for a free, no-obligation estimate and experience Atlanta's best roofing service.</p>
-            <a href="tel:4704659624" class="cta-button">📞 Get Your FREE Estimate Now</a>
-            <div class="contact-info">
-                <p><span class="icon" role="img" aria-label="Phone">📞</span> <a href="tel:4704659624">(470) 465-9624</a></p>
-                <p><span class="icon" role="img" aria-label="Location Pin">📍</span> 260 Peachtree St NW Suite 2200, Atlanta, GA 30303</p>
-                <p>&copy; 2023 Colony Roofers. All rights reserved.</p>
-            </div>
+  <!-- Services Overview -->
+  <section style="background:#f8f9fa;">
+    <div class="max">
+      <div class="center" style="margin-bottom:50px;">
+        <div class="tag">WHAT WE OFFER</div>
+        <h2 class="h2">Our Roofing Experts Services</h2>
+        <p class="sub" style="margin-bottom:0;">Click any service to learn more about what we can do for you.</p>
+      </div>
+      <div class="cards-grid">
+        <div class="card" onclick="showPage('services')">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80" alt="Roof Replacement" style="width:100%;height:180px;object-fit:cover;border-radius:10px 10px 0 0;">
+          <div style="padding:20px;">
+            <h3 style="font-size:17px;font-weight:800;color:#0a1628;margin:0 0 8px;">Roof Replacement</h3>
+            <p style="font-size:14px;color:#555;line-height:1.6;margin:0;">Full tear-off and replacement using premium shingles with manufacturer warranties up to 50 years.</p>
+          </div>
         </div>
-    </footer>
+        <div class="card" onclick="showPage('services')">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Roof Repair" style="width:100%;height:180px;object-fit:cover;border-radius:10px 10px 0 0;">
+          <div style="padding:20px;">
+            <h3 style="font-size:17px;font-weight:800;color:#0a1628;margin:0 0 8px;">Roof Repair</h3>
+            <p style="font-size:14px;color:#555;line-height:1.6;margin:0;">Fast, reliable repairs for leaks, missing shingles, storm damage, and flashing issues. Same-day available.</p>
+          </div>
+        </div>
+        <div class="card" onclick="showPage('services')">
+          <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=80" alt="Storm Damage" style="width:100%;height:180px;object-fit:cover;border-radius:10px 10px 0 0;">
+          <div style="padding:20px;">
+            <h3 style="font-size:17px;font-weight:800;color:#0a1628;margin:0 0 8px;">Storm Damage</h3>
+            <p style="font-size:14px;color:#555;line-height:1.6;margin:0;">Emergency storm response and full insurance claim assistance. We work directly with your adjuster.</p>
+          </div>
+        </div>
+        <div class="card" onclick="showPage('services')">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80" alt="Free Inspections" style="width:100%;height:180px;object-fit:cover;border-radius:10px 10px 0 0;">
+          <div style="padding:20px;">
+            <h3 style="font-size:17px;font-weight:800;color:#0a1628;margin:0 0 8px;">Free Inspections</h3>
+            <p style="font-size:14px;color:#555;line-height:1.6;margin:0;">Comprehensive 25-point roof inspections with detailed report and photos. No obligation, ever.</p>
+          </div>
+        </div>
+        <div class="card" onclick="showPage('services')">
+          <img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=600&q=80" alt="Gutters & Drainage" style="width:100%;height:180px;object-fit:cover;border-radius:10px 10px 0 0;">
+          <div style="padding:20px;">
+            <h3 style="font-size:17px;font-weight:800;color:#0a1628;margin:0 0 8px;">Gutters & Drainage</h3>
+            <p style="font-size:14px;color:#555;line-height:1.6;margin:0;">Gutter installation, cleaning, and repair to keep water away from your foundation and walls.</p>
+          </div>
+        </div>
+        <div class="card" onclick="showPage('services')">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Commercial Roofing" style="width:100%;height:180px;object-fit:cover;border-radius:10px 10px 0 0;">
+          <div style="padding:20px;">
+            <h3 style="font-size:17px;font-weight:800;color:#0a1628;margin:0 0 8px;">Commercial Roofing</h3>
+            <p style="font-size:14px;color:#555;line-height:1.6;margin:0;">Flat roof systems, TPO, EPDM, and metal roofing for commercial and industrial buildings.</p>
+          </div>
+        </div></div>
+    </div>
+  </section>
+
+  <!-- Why Us -->
+  <section style="background:#0a1628;">
+    <div class="max" style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;flex-wrap:wrap;">
+      <div>
+        <div class="tag" style="color:#c17f3d;">WHY CHOOSE US</div>
+        <h2 class="h2" style="color:#fff;margin-bottom:16px;">Why Dallas Trusts Demo Business</h2>
+        <p style="color:rgba(255,255,255,0.6);font-size:16px;line-height:1.8;margin-bottom:32px;">We've built our reputation on quality work, honest pricing, and showing up when we say we will. Here's what sets us apart.</p>
+        
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;">
+          <div style="width:28px;height:28px;background:#c17f3d;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;margin-top:2px;">✓</div>
+          <div>
+            <h4 style="font-size:15px;font-weight:800;color:#fff;margin:0 0 4px;">Licensed & Fully Insured</h4>
+            <p style="font-size:13px;color:rgba(255,255,255,0.65);margin:0;">We carry full liability and workers' comp so you're never at risk.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;">
+          <div style="width:28px;height:28px;background:#c17f3d;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;margin-top:2px;">✓</div>
+          <div>
+            <h4 style="font-size:15px;font-weight:800;color:#fff;margin:0 0 4px;">Lifetime Workmanship Warranty</h4>
+            <p style="font-size:13px;color:rgba(255,255,255,0.65);margin:0;">We stand behind every job with a warranty on our labor — for life.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;">
+          <div style="width:28px;height:28px;background:#c17f3d;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;margin-top:2px;">✓</div>
+          <div>
+            <h4 style="font-size:15px;font-weight:800;color:#fff;margin:0 0 4px;">Free Same-Day Estimates</h4>
+            <p style="font-size:13px;color:rgba(255,255,255,0.65);margin:0;">Get a detailed, no-obligation quote same day. No surprise fees ever.</p>
+          </div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:flex-start;margin-bottom:20px;">
+          <div style="width:28px;height:28px;background:#c17f3d;color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:900;flex-shrink:0;margin-top:2px;">✓</div>
+          <div>
+            <h4 style="font-size:15px;font-weight:800;color:#fff;margin:0 0 4px;">Insurance Claim Experts</h4>
+            <p style="font-size:13px;color:rgba(255,255,255,0.65);margin:0;">We work directly with your insurance company to maximize your claim.</p>
+          </div>
+        </div>
+        <div style="margin-top:32px;">
+          <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" class="btn-main" style="font-size:15px;padding:14px 32px;">Get a Free Estimate &rarr;</a>
+        </div>
+      </div>
+      <div>
+        <img src="https://images.unsplash.com/photo-1622630998477-20aa696ecb05?w=700&q=80" alt="Our team" style="width:100%;height:420px;object-fit:cover;border-radius:16px;border:3px solid #c17f3d;">
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section>
+    <div class="max">
+      <div class="center" style="margin-bottom:50px;">
+        <div class="tag">TESTIMONIALS</div>
+        <h2 class="h2">What Our Customers Say</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        
+        <div style="background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
+          <div style="color:#f5a623;font-size:18px;margin-bottom:12px;">★★★★★</div>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 18px;font-style:italic;">"Called Monday morning after a bad storm. They were on my roof by noon and fully repaired by end of day. Incredible service and fair pricing."</p>
+          <div style="font-weight:800;font-size:14px;color:#0a1628;">Michael R.</div>
+        </div>
+        <div style="background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
+          <div style="color:#f5a623;font-size:18px;margin-bottom:12px;">★★★★★</div>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 18px;font-style:italic;">"These guys found damage I didn't even know I had. Got the full replacement done fast, worked with my insurance, and the crew was super clean."</p>
+          <div style="font-weight:800;font-size:14px;color:#0a1628;">Sarah T.</div>
+        </div>
+        <div style="background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
+          <div style="color:#f5a623;font-size:18px;margin-bottom:12px;">★★★★★</div>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 18px;font-style:italic;">"Best roofing company in Dallas — I've used three others before finding these guys. Night and day difference in quality and communication."</p>
+          <div style="font-weight:800;font-size:14px;color:#0a1628;">James W.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section style="background:#c17f3d;text-align:center;">
+    <h2 style="font-size:clamp(1.8rem,4vw,3rem);font-weight:900;color:#fff;margin-bottom:16px;">Ready to Get Started?</h2>
+    <p style="color:rgba(255,255,255,0.85);font-size:17px;max-width:500px;margin:0 auto 36px;line-height:1.7;">Book a free consultation today. No pressure, no obligation — just an honest conversation about your needs.</p>
+    <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#fff;color:#c17f3d;font-weight:900;font-size:17px;padding:18px 48px;border-radius:50px;box-shadow:0 4px 20px rgba(0,0,0,0.2);">📅 Book a Free Consultation</a>
+  </section>
+
+  <footer>
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Demo Business<span>.</span></div>
+        <p class="footer-desc">Serving Dallas and surrounding areas. Call or book online anytime.</p>
+        <p style="color:rgba(255,255,255,0.55);font-size:14px;margin-top:12px;">📞 (555) 000-0000</p>
+      </div>
+      <div>
+        <h4 class="footer-col">Quick Links</h4>
+        <div class="footer-col">
+          <a onclick="showPage('home')">Home</a>
+          <a onclick="showPage('services')">Services</a>
+          <a onclick="showPage('gallery')">Gallery</a>
+          <a onclick="showPage('about')">About</a>
+          <a onclick="showPage('contact')">Contact</a>
+        </div>
+      </div>
+      <div>
+        <h4 class="footer-col">Get in Touch</h4>
+        <div class="footer-col">
+          <a href="https://calendly.com/jacksonbartholomewreal" target="_blank">Book a Free Call</a>
+          <a onclick="showPage('contact')">Send a Message</a>
+          <a style="cursor:default;color:rgba(255,255,255,0.55);">Dallas, {{STATE}}</a>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2025 Demo Business. Demo website created by <a href="https://vireonmarketing.co" target="_blank" style="color:#c17f3d;">Vireon Marketing</a>.
+    </div>
+  </footer>
+</div>
+
+<!-- ========== SERVICES PAGE ========== -->
+<div id="page-services" class="page">
+  <section style="background:#0a1628;padding:100px 40px 60px;text-align:center;">
+    <div class="tag" style="color:#c17f3d;">OUR SERVICES</div>
+    <h1 style="color:#fff;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;margin-bottom:16px;">Everything We Offer</h1>
+    <p style="color:rgba(255,255,255,0.65);font-size:17px;max-width:580px;margin:0 auto;">Comprehensive roofing experts services for residential and commercial clients across Dallas.</p>
+  </section>
+  <section>
+    <div class="max">
+      
+        <div style="display:flex;gap:50px;align-items:center;margin-bottom:80px;flex-wrap:wrap;">
+          <img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=600&q=80" alt="Roof Replacement" style="width:420px;max-width:100%;height:280px;object-fit:cover;border-radius:14px;flex:1;min-width:280px;">
+          <div style="flex:1;min-width:260px;">
+            <div style="font-size:40px;margin-bottom:12px;">🏠</div>
+            <h3 style="font-size:26px;font-weight:900;color:#0a1628;margin:0 0 16px;">Roof Replacement</h3>
+            <p style="font-size:16px;color:#555;line-height:1.8;margin:0 0 24px;">Full tear-off and replacement using premium shingles with manufacturer warranties up to 50 years.</p>
+            <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#c17f3d;color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:14px 30px;border-radius:50px;">Book a Free Consultation &rarr;</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:50px;align-items:center;margin-bottom:80px;flex-wrap:wrap;">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Roof Repair" style="width:420px;max-width:100%;height:280px;object-fit:cover;border-radius:14px;flex:1;min-width:280px;">
+          <div style="flex:1;min-width:260px;">
+            <div style="font-size:40px;margin-bottom:12px;">🔧</div>
+            <h3 style="font-size:26px;font-weight:900;color:#0a1628;margin:0 0 16px;">Roof Repair</h3>
+            <p style="font-size:16px;color:#555;line-height:1.8;margin:0 0 24px;">Fast, reliable repairs for leaks, missing shingles, storm damage, and flashing issues. Same-day available.</p>
+            <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#c17f3d;color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:14px 30px;border-radius:50px;">Book a Free Consultation &rarr;</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:50px;align-items:center;margin-bottom:80px;flex-wrap:wrap;">
+          <img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=600&q=80" alt="Storm Damage" style="width:420px;max-width:100%;height:280px;object-fit:cover;border-radius:14px;flex:1;min-width:280px;">
+          <div style="flex:1;min-width:260px;">
+            <div style="font-size:40px;margin-bottom:12px;">⛈️</div>
+            <h3 style="font-size:26px;font-weight:900;color:#0a1628;margin:0 0 16px;">Storm Damage</h3>
+            <p style="font-size:16px;color:#555;line-height:1.8;margin:0 0 24px;">Emergency storm response and full insurance claim assistance. We work directly with your adjuster.</p>
+            <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#c17f3d;color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:14px 30px;border-radius:50px;">Book a Free Consultation &rarr;</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:50px;align-items:center;margin-bottom:80px;flex-wrap:wrap;">
+          <img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=600&q=80" alt="Free Inspections" style="width:420px;max-width:100%;height:280px;object-fit:cover;border-radius:14px;flex:1;min-width:280px;">
+          <div style="flex:1;min-width:260px;">
+            <div style="font-size:40px;margin-bottom:12px;">🔍</div>
+            <h3 style="font-size:26px;font-weight:900;color:#0a1628;margin:0 0 16px;">Free Inspections</h3>
+            <p style="font-size:16px;color:#555;line-height:1.8;margin:0 0 24px;">Comprehensive 25-point roof inspections with detailed report and photos. No obligation, ever.</p>
+            <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#c17f3d;color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:14px 30px;border-radius:50px;">Book a Free Consultation &rarr;</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:50px;align-items:center;margin-bottom:80px;flex-wrap:wrap;">
+          <img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=600&q=80" alt="Gutters & Drainage" style="width:420px;max-width:100%;height:280px;object-fit:cover;border-radius:14px;flex:1;min-width:280px;">
+          <div style="flex:1;min-width:260px;">
+            <div style="font-size:40px;margin-bottom:12px;">🌧️</div>
+            <h3 style="font-size:26px;font-weight:900;color:#0a1628;margin:0 0 16px;">Gutters & Drainage</h3>
+            <p style="font-size:16px;color:#555;line-height:1.8;margin:0 0 24px;">Gutter installation, cleaning, and repair to keep water away from your foundation and walls.</p>
+            <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#c17f3d;color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:14px 30px;border-radius:50px;">Book a Free Consultation &rarr;</a>
+          </div>
+        </div>
+        <div style="display:flex;gap:50px;align-items:center;margin-bottom:80px;flex-wrap:wrap;">
+          <img src="https://images.unsplash.com/photo-1486325212027-8081e485255e?w=600&q=80" alt="Commercial Roofing" style="width:420px;max-width:100%;height:280px;object-fit:cover;border-radius:14px;flex:1;min-width:280px;">
+          <div style="flex:1;min-width:260px;">
+            <div style="font-size:40px;margin-bottom:12px;">🏢</div>
+            <h3 style="font-size:26px;font-weight:900;color:#0a1628;margin:0 0 16px;">Commercial Roofing</h3>
+            <p style="font-size:16px;color:#555;line-height:1.8;margin:0 0 24px;">Flat roof systems, TPO, EPDM, and metal roofing for commercial and industrial buildings.</p>
+            <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#c17f3d;color:#fff;text-decoration:none;font-weight:800;font-size:15px;padding:14px 30px;border-radius:50px;">Book a Free Consultation &rarr;</a>
+          </div>
+        </div>
+    </div>
+  </section>
+  <section style="background:#c17f3d;text-align:center;">
+    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:16px;">Not Sure What You Need?</h2>
+    <p style="color:rgba(255,255,255,0.85);font-size:17px;max-width:500px;margin:0 auto 36px;">Book a free consultation and we'll assess your situation and recommend the best solution.</p>
+    <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#fff;color:#c17f3d;font-weight:900;font-size:16px;padding:16px 44px;border-radius:50px;">📅 Book Free Consultation</a>
+  </section>
+  <footer>
+    <div class="footer-grid">
+      <div><div class="footer-logo">Demo Business<span>.</span></div><p class="footer-desc">Serving Dallas and surrounding areas.</p></div>
+      <div><h4 class="footer-col">Pages</h4><div class="footer-col"><a onclick="showPage('home')">Home</a><a onclick="showPage('gallery')">Gallery</a><a onclick="showPage('about')">About</a><a onclick="showPage('contact')">Contact</a></div></div>
+      <div><h4 class="footer-col">Contact</h4><div class="footer-col"><a href="https://calendly.com/jacksonbartholomewreal" target="_blank">Book a Call</a><a onclick="showPage('contact')">Send a Message</a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Demo Business. Demo by <a href="https://vireonmarketing.co" target="_blank" style="color:#c17f3d;">Vireon Marketing</a>.</div>
+  </footer>
+</div>
+
+<!-- ========== GALLERY PAGE ========== -->
+<div id="page-gallery" class="page">
+  <section style="background:#0a1628;padding:100px 40px 60px;text-align:center;">
+    <div class="tag" style="color:#c17f3d;">OUR WORK</div>
+    <h1 style="color:#fff;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;margin-bottom:16px;">Recent Projects</h1>
+    <p style="color:rgba(255,255,255,0.65);font-size:17px;max-width:560px;margin:0 auto;">A look at some of our recent work across Dallas and surrounding areas.</p>
+  </section>
+  <section style="padding:60px 0 0;">
+    <div class="gallery-grid">
+      <div class="gitem" style="grid-row:span 2;"><img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=800&q=80" alt="Complete Roof Replacement — Dallas"><div class="gcap">Complete Roof Replacement — Dallas</div></div>
+<div class="gitem"><img src="https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80" alt="Storm Damage Repair"><div class="gcap">Storm Damage Repair</div></div>
+<div class="gitem"><img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80" alt="Shingle Installation"><div class="gcap">Shingle Installation</div></div>
+<div class="gitem"><img src="https://images.unsplash.com/photo-1504701954957-2010ec3bcec1?w=800&q=80" alt="Emergency Repair"><div class="gcap">Emergency Repair</div></div>
+<div class="gitem"><img src="https://images.unsplash.com/photo-1541888946425-d81bb19240f5?w=800&q=80" alt="Inspection & Report"><div class="gcap">Inspection & Report</div></div>
+<div class="gitem"><img src="https://images.unsplash.com/photo-1576941089067-2de3c901e126?w=800&q=80" alt="Gutter Systems"><div class="gcap">Gutter Systems</div></div>
+
+    </div>
+  </section>
+  <section style="background:#f8f9fa;">
+    <div class="max">
+      <div class="center" style="margin-bottom:50px;">
+        <div class="tag">CUSTOMER REVIEWS</div>
+        <h2 class="h2">Hear From Our Clients</h2>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:24px;">
+        
+        <div style="background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
+          <div style="color:#f5a623;font-size:18px;margin-bottom:12px;">★★★★★</div>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 18px;font-style:italic;">"Called Monday morning after a bad storm. They were on my roof by noon and fully repaired by end of day. Incredible service and fair pricing."</p>
+          <div style="font-weight:800;font-size:14px;color:#0a1628;">Michael R.</div>
+        </div>
+        <div style="background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
+          <div style="color:#f5a623;font-size:18px;margin-bottom:12px;">★★★★★</div>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 18px;font-style:italic;">"These guys found damage I didn't even know I had. Got the full replacement done fast, worked with my insurance, and the crew was super clean."</p>
+          <div style="font-weight:800;font-size:14px;color:#0a1628;">Sarah T.</div>
+        </div>
+        <div style="background:#fff;border-radius:14px;padding:28px;box-shadow:0 2px 16px rgba(0,0,0,0.07);">
+          <div style="color:#f5a623;font-size:18px;margin-bottom:12px;">★★★★★</div>
+          <p style="font-size:15px;color:#444;line-height:1.7;margin:0 0 18px;font-style:italic;">"Best roofing company in Dallas — I've used three others before finding these guys. Night and day difference in quality and communication."</p>
+          <div style="font-weight:800;font-size:14px;color:#0a1628;">James W.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="background:#c17f3d;text-align:center;">
+    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:16px;">Want Results Like These?</h2>
+    <p style="color:rgba(255,255,255,0.85);font-size:17px;max-width:500px;margin:0 auto 36px;">Book a free consultation and let's talk about your project.</p>
+    <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#fff;color:#c17f3d;font-weight:900;font-size:16px;padding:16px 44px;border-radius:50px;">📅 Get a Free Quote</a>
+  </section>
+  <footer>
+    <div class="footer-grid">
+      <div><div class="footer-logo">Demo Business<span>.</span></div><p class="footer-desc">Serving Dallas and surrounding areas.</p></div>
+      <div><h4 class="footer-col">Pages</h4><div class="footer-col"><a onclick="showPage('home')">Home</a><a onclick="showPage('services')">Services</a><a onclick="showPage('about')">About</a><a onclick="showPage('contact')">Contact</a></div></div>
+      <div><h4 class="footer-col">Contact</h4><div class="footer-col"><a href="https://calendly.com/jacksonbartholomewreal" target="_blank">Book a Call</a><a onclick="showPage('contact')">Send a Message</a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Demo Business. Demo by <a href="https://vireonmarketing.co" target="_blank" style="color:#c17f3d;">Vireon Marketing</a>.</div>
+  </footer>
+</div>
+
+<!-- ========== ABOUT PAGE ========== -->
+<div id="page-about" class="page">
+  <section style="background:#0a1628;padding:100px 40px 60px;text-align:center;">
+    <div class="tag" style="color:#c17f3d;">ABOUT US</div>
+    <h1 style="color:#fff;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;margin-bottom:16px;">The Team Behind Demo Business</h1>
+    <p style="color:rgba(255,255,255,0.65);font-size:17px;max-width:600px;margin:0 auto;">Locally owned and operated in Dallas. We built this business on trust, quality, and doing right by our customers.</p>
+  </section>
+  <section>
+    <div class="max" style="display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:center;flex-wrap:wrap;">
+      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=700&q=80" alt="About us" style="width:100%;height:420px;object-fit:cover;border-radius:16px;">
+      <div>
+        <div class="tag">OUR STORY</div>
+        <h2 class="h2">Built on Quality, Driven by Results</h2>
+        <p style="color:#555;font-size:16px;line-height:1.9;margin-bottom:18px;">Demo Business was founded right here in Dallas with a simple belief: every customer deserves honest work, fair pricing, and a team that shows up on time and does the job right.</p>
+        <p style="color:#555;font-size:16px;line-height:1.9;margin-bottom:18px;">We've grown entirely through word of mouth and repeat customers — which tells you everything you need to know about the way we operate. Your satisfaction isn't just our goal, it's our guarantee.</p>
+        <p style="color:#555;font-size:16px;line-height:1.9;margin-bottom:36px;">Whether it's a small job or a big project, we bring the same level of care and attention to every single customer.</p>
+        <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" class="btn-main" style="font-size:15px;padding:14px 32px;">Work With Us &rarr;</a>
+      </div>
+    </div>
+  </section>
+  <section style="background:#f8f9fa;">
+    <div class="max center">
+      <div class="tag">BY THE NUMBERS</div>
+      <h2 class="h2">Why Dallas Chooses Us</h2>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:24px;margin-top:50px;">
+        <div style="background:#fff;border-radius:16px;padding:36px 20px;box-shadow:0 2px 16px rgba(0,0,0,0.06);">
+          <div style="font-size:44px;font-weight:900;color:#c17f3d;">200+</div>
+          <div style="color:#555;font-size:14px;margin-top:8px;font-weight:600;">Happy Customers</div>
+        </div>
+        <div style="background:#fff;border-radius:16px;padding:36px 20px;box-shadow:0 2px 16px rgba(0,0,0,0.06);">
+          <div style="font-size:44px;font-weight:900;color:#c17f3d;">5★</div>
+          <div style="color:#555;font-size:14px;margin-top:8px;font-weight:600;">Average Rating</div>
+        </div>
+        <div style="background:#fff;border-radius:16px;padding:36px 20px;box-shadow:0 2px 16px rgba(0,0,0,0.06);">
+          <div style="font-size:44px;font-weight:900;color:#c17f3d;">8+</div>
+          <div style="color:#555;font-size:14px;margin-top:8px;font-weight:600;">Years in Business</div>
+        </div>
+        <div style="background:#fff;border-radius:16px;padding:36px 20px;box-shadow:0 2px 16px rgba(0,0,0,0.06);">
+          <div style="font-size:44px;font-weight:900;color:#c17f3d;">100%</div>
+          <div style="color:#555;font-size:14px;margin-top:8px;font-weight:600;">Satisfaction Rate</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section style="background:#c17f3d;text-align:center;">
+    <h2 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:900;color:#fff;margin-bottom:16px;">Let's Work Together</h2>
+    <p style="color:rgba(255,255,255,0.85);font-size:17px;max-width:500px;margin:0 auto 36px;">Ready to experience the Demo Business difference? Book your free consultation today.</p>
+    <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#fff;color:#c17f3d;font-weight:900;font-size:16px;padding:16px 44px;border-radius:50px;">📅 Book a Free Consultation</a>
+  </section>
+  <footer>
+    <div class="footer-grid">
+      <div><div class="footer-logo">Demo Business<span>.</span></div><p class="footer-desc">Serving Dallas and surrounding areas.</p></div>
+      <div><h4 class="footer-col">Pages</h4><div class="footer-col"><a onclick="showPage('home')">Home</a><a onclick="showPage('services')">Services</a><a onclick="showPage('gallery')">Gallery</a><a onclick="showPage('contact')">Contact</a></div></div>
+      <div><h4 class="footer-col">Contact</h4><div class="footer-col"><a href="https://calendly.com/jacksonbartholomewreal" target="_blank">Book a Call</a><a onclick="showPage('contact')">Send a Message</a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Demo Business. Demo by <a href="https://vireonmarketing.co" target="_blank" style="color:#c17f3d;">Vireon Marketing</a>.</div>
+  </footer>
+</div>
+
+<!-- ========== CONTACT PAGE ========== -->
+<div id="page-contact" class="page">
+  <section style="background:#0a1628;padding:100px 40px 60px;text-align:center;">
+    <div class="tag" style="color:#c17f3d;">GET IN TOUCH</div>
+    <h1 style="color:#fff;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;margin-bottom:16px;">Let's Talk About Your Project</h1>
+    <p style="color:rgba(255,255,255,0.65);font-size:17px;max-width:560px;margin:0 auto;">Fill out the form and we'll get back to you within 24 hours. Or book a call directly below.</p>
+  </section>
+  <section>
+    <div class="max" style="display:grid;grid-template-columns:1fr 1fr;gap:70px;align-items:start;flex-wrap:wrap;">
+      <!-- Form -->
+      <div>
+        <div id="contactForm">
+          <h3 style="font-size:22px;font-weight:900;color:#0a1628;margin-bottom:8px;">Send Us a Message</h3>
+          <p style="color:#777;font-size:14px;margin-bottom:28px;">We respond to every inquiry within 24 hours.</p>
+          <form onsubmit="submitForm(event)">
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;">
+              <div class="form-group"><label>First Name *</label><input type="text" placeholder="John" required></div>
+              <div class="form-group"><label>Last Name *</label><input type="text" placeholder="Smith" required></div>
+            </div>
+            <div class="form-group"><label>Email *</label><input type="email" placeholder="john@email.com" required></div>
+            <div class="form-group"><label>What do you need?</label><select><option>Select a service...</option><option>Roof Replacement</option><option>Roof Repair</option><option>Storm Damage</option><option>Free Inspections</option><option>Gutters & Drainage</option><option>Commercial Roofing</option><option>Other / Not sure</option></select></div>
+            <div class="form-group"><label>Tell us more</label><textarea placeholder="Describe your project or question..."></textarea></div>
+            <button type="submit" class="form-submit">Send Message &rarr;</button>
+          </form>
+        </div>
+        <div id="formSuccess" style="display:none;text-align:center;padding:60px 20px;">
+          <div style="font-size:60px;margin-bottom:16px;">✅</div>
+          <h3 style="font-size:24px;font-weight:900;margin-bottom:12px;">Message Sent!</h3>
+          <p style="color:#666;font-size:16px;line-height:1.7;">Thanks for reaching out. We'll be in touch within 24 hours.<br><br>Rather talk now? <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="color:#c17f3d;font-weight:800;">Book a call here.</a></p>
+        </div>
+      </div>
+      <!-- Info -->
+      <div>
+        <h3 style="font-size:26px;font-weight:900;color:#0a1628;margin-bottom:14px;">We'd Love to Hear From You</h3>
+        <p style="color:#666;font-size:15px;line-height:1.8;margin-bottom:36px;">Whether you're ready to get started or just exploring options — reach out. We'll give you an honest assessment with zero pressure.</p>
+        <div style="display:flex;gap:14px;align-items:center;margin-bottom:22px;">
+          <div style="width:48px;height:48px;background:#c17f3d;opacity:0.15;border-radius:12px;flex-shrink:0;"></div>
+          <div style="margin-left:-48px;width:48px;height:48px;display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:22px;">📍</div>
+          <div><div style="font-weight:800;font-size:15px;margin-bottom:3px;">Location</div><div style="color:#666;font-size:14px;">Dallas, {{STATE}} &amp; Surrounding Areas</div></div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:center;margin-bottom:22px;">
+          <div style="width:48px;height:48px;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">📞</div>
+          <div><div style="font-weight:800;font-size:15px;margin-bottom:3px;">Phone</div><div style="color:#666;font-size:14px;">(555) 000-0000</div></div>
+        </div>
+        <div style="display:flex;gap:14px;align-items:center;margin-bottom:36px;">
+          <div style="width:48px;height:48px;font-size:22px;display:flex;align-items:center;justify-content:center;flex-shrink:0;">⏱️</div>
+          <div><div style="font-weight:800;font-size:15px;margin-bottom:3px;">Response Time</div><div style="color:#666;font-size:14px;">Within 24 hours, usually much faster</div></div>
+        </div>
+        <div style="background:#c17f3d;border-radius:14px;padding:28px;">
+          <p style="color:#fff;font-weight:800;font-size:17px;margin-bottom:10px;">Prefer to book directly?</p>
+          <p style="color:rgba(255,255,255,0.8);font-size:14px;line-height:1.7;margin-bottom:20px;">Skip the form and schedule a free consultation straight to our calendar.</p>
+          <a href="https://calendly.com/jacksonbartholomewreal" target="_blank" style="display:inline-block;background:#fff;color:#c17f3d;font-weight:900;font-size:15px;padding:14px 28px;border-radius:50px;">📅 Book a Free Call &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <div class="footer-grid">
+      <div><div class="footer-logo">Demo Business<span>.</span></div><p class="footer-desc">Serving Dallas and surrounding areas.</p></div>
+      <div><h4 class="footer-col">Pages</h4><div class="footer-col"><a onclick="showPage('home')">Home</a><a onclick="showPage('services')">Services</a><a onclick="showPage('gallery')">Gallery</a><a onclick="showPage('about')">About</a></div></div>
+      <div><h4 class="footer-col">Quick Links</h4><div class="footer-col"><a href="https://calendly.com/jacksonbartholomewreal" target="_blank">Book a Call</a><a href="https://vireonmarketing.co" target="_blank">Vireon Marketing</a></div></div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 Demo Business. Demo by <a href="https://vireonmarketing.co" target="_blank" style="color:#c17f3d;">Vireon Marketing</a>.</div>
+  </footer>
+</div>
+
+<script>
+function showPage(name) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.getElementById('page-' + name).classList.add('active');
+  window.scrollTo(0,0);
+}
+function submitForm(e) {
+  e.preventDefault();
+  document.getElementById('contactForm').style.display='none';
+  document.getElementById('formSuccess').style.display='block';
+}
+</script>
 </body>
 </html>
