@@ -12,8 +12,6 @@ body{font-family:'Inter',sans-serif;color:#111;background:#fff;}
 nav{background:#0a1628;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;}
 .logo{color:#fff;font-size:22px;font-weight:800;}.logo span{color:#c17f3d;}
 .nav-phone{background:#c17f3d;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;}
-
-/* HERO WITH REAL IMAGE */
 .hero{position:relative;height:560px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
 .hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
 .hero-overlay{position:absolute;inset:0;background:rgba(10,22,40,0.72);z-index:1;}
@@ -23,26 +21,20 @@ nav{background:#0a1628;padding:16px 40px;display:flex;justify-content:space-betw
 .hero-content p{font-size:18px;opacity:0.85;margin-bottom:30px;}
 .btn-primary{background:#c17f3d;color:#fff;padding:16px 36px;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;display:inline-block;}
 .btn-secondary{background:transparent;color:#fff;padding:16px 36px;border-radius:8px;font-size:16px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,0.4);display:inline-block;margin-left:12px;}
-
-/* SERVICES */
 .services{padding:80px 40px;background:#f8f9fa;}
 .services h2{text-align:center;font-size:34px;font-weight:800;margin-bottom:10px;}
 .services .sub{text-align:center;color:#666;margin-bottom:48px;}
 .services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto;}
 .service-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.07);}
-.service-card img{width:100%;height:180px;object-fit:cover;}
+.service-card img{width:100%;height:180px;object-fit:cover;display:block;}
 .service-card-body{padding:20px;}
 .service-card h3{font-size:18px;font-weight:700;margin-bottom:8px;}
 .service-card p{font-size:14px;color:#555;line-height:1.6;}
-
-/* GALLERY */
 .gallery{padding:80px 40px;}
 .gallery h2{text-align:center;font-size:34px;font-weight:800;margin-bottom:10px;}
 .gallery .sub{text-align:center;color:#666;margin-bottom:48px;}
 .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:0 auto;}
-.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;}
-
-/* WHY US */
+.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;display:block;}
 .why-us{background:#0a1628;padding:80px 40px;color:#fff;}
 .why-us h2{text-align:center;font-size:34px;font-weight:800;margin-bottom:48px;}
 .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto;}
@@ -50,8 +42,6 @@ nav{background:#0a1628;padding:16px 40px;display:flex;justify-content:space-betw
 .why-check{background:#c17f3d;color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
 .why-item h4{font-size:16px;font-weight:700;margin-bottom:4px;}
 .why-item p{font-size:14px;opacity:0.7;}
-
-/* TESTIMONIALS */
 .testimonials{padding:80px 40px;background:#f8f9fa;}
 .testimonials h2{text-align:center;font-size:34px;font-weight:800;margin-bottom:48px;}
 .t-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto;}
@@ -62,18 +52,12 @@ nav{background:#0a1628;padding:16px 40px;display:flex;justify-content:space-betw
 .avatar{width:42px;height:42px;border-radius:50%;background:#0a1628;color:#c17f3d;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;}
 .reviewer-name{font-weight:700;font-size:14px;}
 .reviewer-loc{font-size:13px;color:#888;}
-
-/* CTA */
 .cta{background:linear-gradient(135deg,#c17f3d,#d4924e);padding:80px 40px;text-align:center;color:#fff;}
 .cta h2{font-size:36px;font-weight:800;margin-bottom:16px;}
 .cta p{font-size:18px;opacity:0.9;margin-bottom:32px;}
 .btn-white{background:#fff;color:#c17f3d;padding:16px 40px;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;display:inline-block;}
-
-/* FOOTER */
 footer{background:#0a1628;color:#fff;padding:40px;text-align:center;}
 footer p{opacity:0.5;font-size:13px;margin-top:8px;}
-
-/* MOBILE */
 @media(max-width:768px){
   nav{padding:14px 20px;}
   .hero{height:460px;}
@@ -102,9 +86,8 @@ footer p{opacity:0.5;font-size:13px;margin-top:8px;}
   <a href="tel:4045550100" class="nav-phone">📞 (404) 555-0100</a>
 </nav>
 
-<!-- HERO -->
 <section class="hero">
-  <img class="hero-img" src="https://images.unsplash.com/photo-1632207691143-643e2a9a9361?w=1400&q=80" alt="Roofing">
+  <img class="hero-img" src="https://picsum.photos/seed/roof1/1400/600" alt="Roofing">
   <div class="hero-overlay"></div>
   <div class="hero-content">
     <div class="hero-badge">⭐ Atlanta's #1 Rated Roofing Company</div>
@@ -115,50 +98,38 @@ footer p{opacity:0.5;font-size:13px;margin-top:8px;}
   </div>
 </section>
 
-<!-- SERVICES -->
 <section class="services">
   <h2>Our Services</h2>
   <p class="sub">Everything your roof needs — done right the first time.</p>
   <div class="services-grid">
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&q=80" alt="Roof Replacement">
-      <div class="service-card-body">
-        <h3>Roof Replacement</h3>
-        <p>Full tear-off and replacement with premium materials. We handle permits, insurance claims, and cleanup.</p>
-      </div>
+      <img src="https://picsum.photos/seed/roof2/600/400" alt="Roof Replacement">
+      <div class="service-card-body"><h3>Roof Replacement</h3><p>Full tear-off and replacement with premium materials. We handle permits, insurance claims, and cleanup.</p></div>
     </div>
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&q=80" alt="Roof Repair">
-      <div class="service-card-body">
-        <h3>Roof Repair</h3>
-        <p>Leaks, missing shingles, storm damage — our crew diagnoses fast and fixes it right the first time.</p>
-      </div>
+      <img src="https://picsum.photos/seed/roof3/600/400" alt="Roof Repair">
+      <div class="service-card-body"><h3>Roof Repair</h3><p>Leaks, missing shingles, storm damage — our crew diagnoses fast and fixes it right the first time.</p></div>
     </div>
     <div class="service-card">
-      <img src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=600&q=80" alt="Gutters">
-      <div class="service-card-body">
-        <h3>Gutters & Downspouts</h3>
-        <p>Custom-fitted seamless gutters that protect your home's foundation and curb appeal year-round.</p>
-      </div>
+      <img src="https://picsum.photos/seed/roof4/600/400" alt="Gutters">
+      <div class="service-card-body"><h3>Gutters & Downspouts</h3><p>Custom-fitted seamless gutters that protect your home's foundation and curb appeal year-round.</p></div>
     </div>
   </div>
 </section>
 
-<!-- GALLERY -->
 <section class="gallery">
   <h2>Our Work</h2>
   <p class="sub">Real projects, real results.</p>
   <div class="gallery-grid">
-    <img src="https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?w=600&q=80" alt="Project 1">
-    <img src="https://images.unsplash.com/photo-1609861188888-aff7e5ab54d6?w=600&q=80" alt="Project 2">
-    <img src="https://images.unsplash.com/photo-1571939228382-b2f2b585ce15?w=600&q=80" alt="Project 3">
-    <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&q=80" alt="Project 4">
-    <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?w=600&q=80" alt="Project 5">
-    <img src="https://images.unsplash.com/photo-1628744448840-55bdb2497bd4?w=600&q=80" alt="Project 6">
+    <img src="https://picsum.photos/seed/g1/600/400" alt="Project 1">
+    <img src="https://picsum.photos/seed/g2/600/400" alt="Project 2">
+    <img src="https://picsum.photos/seed/g3/600/400" alt="Project 3">
+    <img src="https://picsum.photos/seed/g4/600/400" alt="Project 4">
+    <img src="https://picsum.photos/seed/g5/600/400" alt="Project 5">
+    <img src="https://picsum.photos/seed/g6/600/400" alt="Project 6">
   </div>
 </section>
 
-<!-- WHY US -->
 <section class="why-us">
   <h2>Why Atlanta Trusts Colony Roofers</h2>
   <div class="why-grid">
@@ -169,7 +140,6 @@ footer p{opacity:0.5;font-size:13px;margin-top:8px;}
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
 <section class="testimonials">
   <h2>What Our Customers Say</h2>
   <div class="t-grid">
@@ -186,7 +156,6 @@ footer p{opacity:0.5;font-size:13px;margin-top:8px;}
   </div>
 </section>
 
-<!-- CTA -->
 <section class="cta" id="contact">
   <h2>Ready for a Free Roof Inspection?</h2>
   <p>No pressure, no obligation — just an honest assessment from Atlanta's most trusted roofers.</p>
