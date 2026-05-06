@@ -1,171 +1,619 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Colony Roofers | Atlanta Roofing Experts</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
-<style>
-*{margin:0;padding:0;box-sizing:border-box;}
-body{font-family:'Inter',sans-serif;color:#111;background:#fff;}
-.banner{background:#c17f3d;color:#fff;text-align:center;padding:10px 20px;font-size:13px;font-weight:600;position:sticky;top:0;z-index:1000;}
-nav{background:#0a1628;padding:16px 40px;display:flex;justify-content:space-between;align-items:center;}
-.logo{color:#fff;font-size:22px;font-weight:800;}.logo span{color:#c17f3d;}
-.nav-phone{background:#c17f3d;color:#fff;padding:10px 22px;border-radius:6px;text-decoration:none;font-weight:700;font-size:14px;}
-.hero{position:relative;height:560px;display:flex;align-items:center;justify-content:center;text-align:center;overflow:hidden;}
-.hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;}
-.hero-overlay{position:absolute;inset:0;background:rgba(10,22,40,0.72);z-index:1;}
-.hero-content{position:relative;z-index:2;color:#fff;padding:0 20px;max-width:700px;}
-.hero-badge{display:inline-block;background:rgba(193,127,61,0.2);color:#c17f3d;border:1px solid rgba(193,127,61,0.5);padding:6px 18px;border-radius:20px;font-size:13px;font-weight:600;margin-bottom:20px;text-transform:uppercase;letter-spacing:1px;}
-.hero-content h1{font-size:46px;font-weight:800;line-height:1.1;margin-bottom:16px;}
-.hero-content p{font-size:18px;opacity:0.85;margin-bottom:30px;}
-.btn-primary{background:#c17f3d;color:#fff;padding:16px 36px;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;display:inline-block;}
-.btn-secondary{background:transparent;color:#fff;padding:16px 36px;border-radius:8px;font-size:16px;font-weight:600;text-decoration:none;border:2px solid rgba(255,255,255,0.4);display:inline-block;margin-left:12px;}
-.services{padding:80px 40px;background:#f8f9fa;}
-.services h2{text-align:center;font-size:34px;font-weight:800;margin-bottom:10px;}
-.services .sub{text-align:center;color:#666;margin-bottom:48px;}
-.services-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;max-width:1000px;margin:0 auto;}
-.service-card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 2px 16px rgba(0,0,0,0.07);}
-.service-card img{width:100%;height:180px;object-fit:cover;display:block;}
-.service-card-body{padding:20px;}
-.service-card h3{font-size:18px;font-weight:700;margin-bottom:8px;}
-.service-card p{font-size:14px;color:#555;line-height:1.6;}
-.gallery{padding:80px 40px;}
-.gallery h2{text-align:center;font-size:34px;font-weight:800;margin-bottom:10px;}
-.gallery .sub{text-align:center;color:#666;margin-bottom:48px;}
-.gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1000px;margin:0 auto;}
-.gallery-grid img{width:100%;height:220px;object-fit:cover;border-radius:10px;display:block;}
-.why-us{background:#0a1628;padding:80px 40px;color:#fff;}
-.why-us h2{text-align:center;font-size:34px;font-weight:800;margin-bottom:48px;}
-.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px;max-width:900px;margin:0 auto;}
-.why-item{display:flex;gap:16px;align-items:flex-start;}
-.why-check{background:#c17f3d;color:#fff;width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0;}
-.why-item h4{font-size:16px;font-weight:700;margin-bottom:4px;}
-.why-item p{font-size:14px;opacity:0.7;}
-.testimonials{padding:80px 40px;background:#f8f9fa;}
-.testimonials h2{text-align:center;font-size:34px;font-weight:800;margin-bottom:48px;}
-.t-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;max-width:900px;margin:0 auto;}
-.t-card{background:#fff;border-radius:12px;padding:28px;box-shadow:0 2px 12px rgba(0,0,0,0.06);}
-.stars{color:#f59e0b;font-size:18px;margin-bottom:12px;}
-.t-card p{font-size:15px;line-height:1.7;color:#444;margin-bottom:16px;}
-.reviewer{display:flex;align-items:center;gap:12px;}
-.avatar{width:42px;height:42px;border-radius:50%;background:#0a1628;color:#c17f3d;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:16px;}
-.reviewer-name{font-weight:700;font-size:14px;}
-.reviewer-loc{font-size:13px;color:#888;}
-.cta{background:linear-gradient(135deg,#c17f3d,#d4924e);padding:80px 40px;text-align:center;color:#fff;}
-.cta h2{font-size:36px;font-weight:800;margin-bottom:16px;}
-.cta p{font-size:18px;opacity:0.9;margin-bottom:32px;}
-.btn-white{background:#fff;color:#c17f3d;padding:16px 40px;border-radius:8px;font-size:16px;font-weight:700;text-decoration:none;display:inline-block;}
-footer{background:#0a1628;color:#fff;padding:40px;text-align:center;}
-footer p{opacity:0.5;font-size:13px;margin-top:8px;}
-@media(max-width:768px){
-  nav{padding:14px 20px;}
-  .hero{height:460px;}
-  .hero-content h1{font-size:30px;}
-  .hero-content p{font-size:15px;}
-  .btn-secondary{display:none;}
-  .services{padding:60px 20px;}
-  .services-grid{grid-template-columns:1fr;}
-  .gallery{padding:60px 20px;}
-  .gallery-grid{grid-template-columns:repeat(2,1fr);}
-  .why-us{padding:60px 20px;}
-  .why-grid{grid-template-columns:1fr;}
-  .testimonials{padding:60px 20px;}
-  .t-grid{grid-template-columns:1fr;}
-  .cta{padding:60px 20px;}
-  .cta h2{font-size:28px;}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Colony Roofers - Atlanta's Premier Roofing Experts</title>
+    <!-- Google Fonts for a modern, bold look -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700;800&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        /* CSS Variables for easy color and font management */
+        :root {
+            --dark-navy: #0a1628;
+            --copper-accent: #c17f3d;
+            --light-text: #f8f8f8;
+            --subtle-gray: #cccccc;
+            --bg-gradient-start: #060e19; /* Slightly darker than main navy for gradient depth */
+            --header-font: 'Poppins', sans-serif;
+            --body-font: 'Roboto', sans-serif;
+            --container-width: 1200px;
+            --spacing-unit: 1rem;
+            --border-radius: 8px;
+            --transition-speed: 0.3s ease-in-out;
+        }
+
+        /* Base Styles & Resets */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--light-text);
+            background-color: var(--dark-navy);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--copper-accent);
+            transition: color var(--transition-speed);
+        }
+
+        a:hover {
+            color: var(--light-text);
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--header-font);
+            color: var(--light-text);
+            margin-bottom: var(--spacing-unit) * 1.5;
+            font-weight: 700;
+        }
+
+        h1 { font-size: 3.8rem; line-height: 1.1; font-weight: 800; }
+        h2 { font-size: 2.8rem; margin-top: 3rem; }
+        h3 { font-size: 2rem; }
+        p { margin-bottom: var(--spacing-unit); }
+
+        /* Utility Classes */
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit) * 2;
+        }
+
+        .text-center {
+            text-align: center;
+        }
+
+        .cta-button {
+            display: inline-block;
+            background-color: var(--copper-accent);
+            color: var(--dark-navy);
+            padding: var(--spacing-unit) * 1.2 var(--spacing-unit) * 2.5;
+            border-radius: var(--border-radius);
+            font-family: var(--header-font);
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            transition: background-color var(--transition-speed), transform var(--transition-speed), box-shadow var(--transition-speed);
+            border: none;
+            cursor: pointer;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-button:hover {
+            background-color: #e09f53; /* A slightly lighter copper */
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            color: var(--dark-navy); /* Ensure text stays dark for contrast */
+        }
+
+        /* Sticky Mockup Banner */
+        #mockup-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: #333; /* A neutral dark grey */
+            color: #eee;
+            text-align: center;
+            padding: 0.8rem 0;
+            font-size: 0.9rem;
+            font-family: var(--body-font);
+            z-index: 1000;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+            letter-spacing: 0.03em;
+        }
+
+        /* Main content offset for fixed banner */
+        main, footer {
+            padding-top: 50px; /* Adjust based on banner height */
+        }
+
+        /* Hero Section */
+        #hero {
+            background: linear-gradient(135deg, var(--bg-gradient-start) 0%, var(--dark-navy) 100%);
+            min-height: 90vh; /* Make sure it takes up most of the viewport */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+            padding: var(--spacing-unit) * 4 0;
+            border-bottom: 5px solid var(--copper-accent); /* A subtle divider */
+        }
+
+        /* Hero Background Overlay for subtle texture */
+        #hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml;utf8,<svg width="100%" height="100%" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" opacity="0.05"><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 L 0 10" fill="none" stroke="white" stroke-width="0.2"/></pattern><rect width="100%" height="100%" fill="url(#grid)" /></svg>') repeat;
+            opacity: 0.05; /* Very subtle */
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: var(--spacing-unit) * 2;
+        }
+
+        #hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: var(--spacing-unit) * 1.5;
+            text-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+            background: -webkit-linear-gradient(left, var(--light-text), var(--copper-accent));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        #hero p {
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-unit) * 2.5;
+            color: var(--subtle-gray);
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        #hero .cta-button {
+            font-size: 1.6rem;
+            padding: var(--spacing-unit) * 1.5 var(--spacing-unit) * 3;
+        }
+
+        /* Section Styling */
+        section {
+            padding: var(--spacing-unit) * 5 0;
+            text-align: center;
+        }
+
+        section:nth-of-type(even) {
+            background-color: #0c1a30; /* Slightly lighter navy for contrast */
+        }
+
+        section h2 {
+            font-size: 3.2rem;
+            margin-bottom: var(--spacing-unit) * 3;
+            position: relative;
+            padding-bottom: 15px;
+            display: inline-block;
+            color: var(--light-text);
+        }
+
+        section h2::after {
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: 0;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 5px;
+            background-color: var(--copper-accent);
+            border-radius: 3px;
+        }
+
+        /* Services Grid */
+        #services .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--spacing-unit) * 2.5;
+            margin-top: var(--spacing-unit) * 3;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .service-card {
+            background-color: #12233c; /* Darker card background */
+            padding: var(--spacing-unit) * 2.5;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            transition: transform var(--transition-speed), background-color var(--transition-speed), box-shadow var(--transition-speed);
+            border: 1px solid transparent;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-8px);
+            background-color: var(--dark-navy); /* Slightly darkens on hover */
+            border-color: var(--copper-accent);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .service-card .icon {
+            font-size: 3.5rem;
+            margin-bottom: var(--spacing-unit);
+            color: var(--copper-accent);
+            line-height: 1; /* Ensure emoji doesn't add extra space */
+            animation: pulse-icon 2s infinite ease-in-out;
+        }
+
+        .service-card h3 {
+            font-size: 1.8rem;
+            margin-top: var(--spacing-unit);
+            margin-bottom: var(--spacing-unit);
+            color: var(--light-text);
+        }
+
+        .service-card p {
+            font-size: 1rem;
+            color: var(--subtle-gray);
+            flex-grow: 1; /* Allow description to take available space */
+        }
+
+        @keyframes pulse-icon {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+
+        /* Why Choose Us */
+        #why-choose-us {
+            background: linear-gradient(to top, var(--bg-gradient-start), var(--dark-navy));
+        }
+
+        #why-choose-us .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--spacing-unit) * 2.5;
+            margin-top: var(--spacing-unit) * 3;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .benefit-item {
+            background-color: #12233c;
+            padding: var(--spacing-unit) * 2;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            text-align: left;
+            display: flex;
+            align-items: flex-start;
+            transition: transform var(--transition-speed), background-color var(--transition-speed), box-shadow var(--transition-speed);
+            border-left: 5px solid var(--copper-accent); /* Strong left border accent */
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-5px);
+            background-color: #1a2f4a; /* Slightly lighter on hover */
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4);
+        }
+
+        .benefit-item .icon {
+            font-size: 2.2rem;
+            color: var(--copper-accent);
+            margin-right: var(--spacing-unit) * 1.5;
+            min-width: 2.2rem; /* Keep icon size consistent */
+        }
+
+        .benefit-item .content h3 {
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: var(--spacing-unit) * 0.5;
+            color: var(--light-text);
+        }
+
+        .benefit-item .content p {
+            font-size: 0.95rem;
+            color: var(--subtle-gray);
+            margin-bottom: 0;
+        }
+
+        /* Testimonials Section */
+        #testimonials {
+            background-color: #0c1a30;
+            border-top: 1px solid rgba(193, 127, 61, 0.2);
+        }
+
+        #testimonials .testimonials-container {
+            display: flex;
+            flex-wrap: wrap; /* Allows items to wrap on smaller screens */
+            justify-content: center;
+            gap: var(--spacing-unit) * 2;
+            margin-top: var(--spacing-unit) * 3;
+            padding: 0 var(--spacing-unit);
+        }
+
+        .testimonial-card {
+            background-color: #12233c;
+            padding: var(--spacing-unit) * 2.5;
+            border-radius: var(--border-radius);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            flex: 1 1 300px; /* Allows flexibility and minimum width */
+            max-width: 400px;
+            text-align: left;
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-speed), box-shadow var(--transition-speed);
+            border-bottom: 4px solid var(--copper-accent);
+        }
+
+        .testimonial-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .testimonial-card .stars {
+            color: gold;
+            font-size: 1.5rem;
+            margin-bottom: var(--spacing-unit);
+            letter-spacing: 0.1em;
+        }
+
+        .testimonial-card p {
+            font-style: italic;
+            margin-bottom: var(--spacing-unit) * 1.5;
+            color: var(--subtle-gray);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            flex-grow: 1; /* Allows quote to take available height */
+        }
+
+        .testimonial-card .author {
+            font-weight: 700;
+            color: var(--copper-accent);
+            font-size: 1.1rem;
+            margin-top: auto; /* Pushes author to the bottom */
+        }
+
+        /* Contact/CTA Footer */
+        #contact-cta {
+            background: linear-gradient(135deg, var(--dark-navy) 0%, var(--bg-gradient-start) 100%);
+            padding: var(--spacing-unit) * 5 0;
+            text-align: center;
+            border-top: 5px solid var(--copper-accent);
+        }
+
+        #contact-cta .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 var(--spacing-unit) * 2;
+        }
+
+        #contact-cta h3 {
+            font-size: 2.5rem;
+            margin-bottom: var(--spacing-unit) * 1.5;
+            color: var(--light-text);
+        }
+
+        #contact-cta p {
+            font-size: 1.2rem;
+            margin-bottom: var(--spacing-unit) * 2.5;
+            color: var(--subtle-gray);
+        }
+
+        #contact-cta .contact-info {
+            margin-top: var(--spacing-unit) * 3;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: var(--spacing-unit) * 2;
+        }
+
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: var(--spacing-unit) * 0.8;
+            color: var(--subtle-gray);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .contact-info p .icon {
+            font-size: 1.5rem;
+            color: var(--copper-accent);
+            margin-right: var(--spacing-unit) * 0.8;
+            line-height: 1;
+        }
+
+        .contact-info a {
+            font-weight: 700;
+            transition: color var(--transition-speed);
+        }
+        .contact-info a:hover {
+            color: var(--light-text);
+        }
+
+
+        /* Mobile Responsiveness */
+        @media (max-width: 992px) {
+            h1 { font-size: 3.2rem; }
+            h2 { font-size: 2.4rem; }
+            h3 { font-size: 1.8rem; }
+            #hero p { font-size: 1.3rem; }
+            #hero .cta-button { font-size: 1.4rem; padding: var(--spacing-unit) * 1.2 var(--spacing-unit) * 2.2; }
+            section h2 { font-size: 2.8rem; }
+        }
+
+        @media (max-width: 768px) {
+            #mockup-banner { font-size: 0.8rem; padding: 0.6rem 0; }
+            main, footer { padding-top: 40px; } /* Adjust for smaller banner */
+            h1 { font-size: 2.5rem; }
+            h2 { font-size: 2rem; }
+            h3 { font-size: 1.5rem; }
+            #hero p { font-size: 1.1rem; margin-bottom: var(--spacing-unit) * 2; }
+            #hero .cta-button { font-size: 1.2rem; padding: var(--spacing-unit) var(--spacing-unit) * 2; }
+
+            .service-card, .benefit-item, .testimonial-card {
+                padding: var(--spacing-unit) * 1.5;
+            }
+
+            .service-card .icon { font-size: 3rem; }
+            .benefit-item .icon { font-size: 1.8rem; margin-right: var(--spacing-unit); }
+
+            #contact-cta h3 { font-size: 2rem; }
+            #contact-cta p { font-size: 1rem; }
+        }
+
+        @media (max-width: 480px) {
+            #mockup-banner { padding: 0.5rem 0; font-size: 0.75rem;}
+            main, footer { padding-top: 35px; }
+            h1 { font-size: 2rem; }
+            h2 { font-size: 1.8rem; }
+            section h2::after { width: 60px; height: 4px; }
+            .hero-content { padding: var(--spacing-unit); }
+            #hero .cta-button { font-size: 1rem; padding: var(--spacing-unit) * 0.8 var(--spacing-unit) * 1.5; }
+
+            .services-grid, .benefits-grid, .testimonials-container {
+                gap: var(--spacing-unit) * 1.5;
+                padding: 0 var(--spacing-unit) * 0.5;
+            }
+            .testimonial-card {
+                flex: 1 1 90%; /* Take almost full width on very small screens */
+            }
+            .contact-info p {
+                flex-direction: column;
+                margin-bottom: var(--spacing-unit);
+            }
+            .contact-info p .icon {
+                margin-right: 0;
+                margin-bottom: var(--spacing-unit) * 0.5;
+            }
+        }
+
+    </style>
 </head>
 <body>
-
-<div class="banner">🎨 This is a <strong>FREE website mockup</strong> built for Colony Roofers by <strong>Vireon Marketing</strong></div>
-
-<nav>
-  <div class="logo">Colony<span>.</span></div>
-  <a href="tel:4045550100" class="nav-phone">📞 (404) 555-0100</a>
-</nav>
-
-<section class="hero">
-  <img class="hero-img" src="https://picsum.photos/seed/roof1/1400/600" alt="Roofing">
-  <div class="hero-overlay"></div>
-  <div class="hero-content">
-    <div class="hero-badge">⭐ Atlanta's #1 Rated Roofing Company</div>
-    <h1>Expert Roofing.<br>Guaranteed Results.</h1>
-    <p>From minor repairs to full replacements — premium craftsmanship, honest pricing, and work we stand behind 100%.</p>
-    <a href="#contact" class="btn-primary">Get a Free Estimate</a>
-    <a href="tel:4045550100" class="btn-secondary">Call Now</a>
-  </div>
-</section>
-
-<section class="services">
-  <h2>Our Services</h2>
-  <p class="sub">Everything your roof needs — done right the first time.</p>
-  <div class="services-grid">
-    <div class="service-card">
-      <img src="https://picsum.photos/seed/roof2/600/400" alt="Roof Replacement">
-      <div class="service-card-body"><h3>Roof Replacement</h3><p>Full tear-off and replacement with premium materials. We handle permits, insurance claims, and cleanup.</p></div>
+    <!-- Sticky Mockup Banner -->
+    <div id="mockup-banner">
+        This is a FREE website mockup built for Colony Roofers by ConnorSync Marketing
     </div>
-    <div class="service-card">
-      <img src="https://picsum.photos/seed/roof3/600/400" alt="Roof Repair">
-      <div class="service-card-body"><h3>Roof Repair</h3><p>Leaks, missing shingles, storm damage — our crew diagnoses fast and fixes it right the first time.</p></div>
-    </div>
-    <div class="service-card">
-      <img src="https://picsum.photos/seed/roof4/600/400" alt="Gutters">
-      <div class="service-card-body"><h3>Gutters & Downspouts</h3><p>Custom-fitted seamless gutters that protect your home's foundation and curb appeal year-round.</p></div>
-    </div>
-  </div>
-</section>
 
-<section class="gallery">
-  <h2>Our Work</h2>
-  <p class="sub">Real projects, real results.</p>
-  <div class="gallery-grid">
-    <img src="https://picsum.photos/seed/g1/600/400" alt="Project 1">
-    <img src="https://picsum.photos/seed/g2/600/400" alt="Project 2">
-    <img src="https://picsum.photos/seed/g3/600/400" alt="Project 3">
-    <img src="https://picsum.photos/seed/g4/600/400" alt="Project 4">
-    <img src="https://picsum.photos/seed/g5/600/400" alt="Project 5">
-    <img src="https://picsum.photos/seed/g6/600/400" alt="Project 6">
-  </div>
-</section>
+    <main>
+        <!-- Hero Section -->
+        <section id="hero">
+            <div class="hero-content container">
+                <h1>Atlanta's Most Trusted Roofers: Excellence Above All</h1>
+                <p>Protecting homes and businesses across Atlanta with unmatched quality, reliability, and local expertise. Your roof is our priority.</p>
+                <a href="tel:4704659624" class="cta-button">📞 Call for a FREE Estimate: (470) 465-9624</a>
+            </div>
+        </section>
 
-<section class="why-us">
-  <h2>Why Atlanta Trusts Colony Roofers</h2>
-  <div class="why-grid">
-    <div class="why-item"><div class="why-check">✓</div><div><h4>Licensed & Insured</h4><p>Fully licensed in Georgia with comprehensive liability coverage on every job.</p></div></div>
-    <div class="why-item"><div class="why-check">✓</div><div><h4>12+ Years Experience</h4><p>Over a decade serving Atlanta homeowners with consistent 5-star results.</p></div></div>
-    <div class="why-item"><div class="why-check">✓</div><div><h4>Insurance Claims Handled</h4><p>We work directly with your insurance company so you don't have to.</p></div></div>
-    <div class="why-item"><div class="why-check">✓</div><div><h4>Lifetime Workmanship Warranty</h4><p>We stand behind every nail we drive. If it fails, we fix it free.</p></div></div>
-  </div>
-</section>
+        <!-- Services Section -->
+        <section id="services">
+            <div class="container">
+                <h2>Our Expert Roofing Services</h2>
+                <div class="services-grid">
+                    <div class="service-card">
+                        <span class="icon" role="img" aria-label="House">🏠</span>
+                        <h3>Residential Roofing</h3>
+                        <p>From asphalt shingles to metal and tile, we provide comprehensive roofing solutions for homes of all sizes. Quality materials and expert installation guaranteed.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="icon" role="img" aria-label="Building">🏢</span>
+                        <h3>Commercial Roofing</h3>
+                        <p>Specialized flat roofing, TPO, EPDM, and modified bitumen systems for businesses. Durable, cost-effective solutions tailored to your commercial property.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="icon" role="img" aria-label="Wrench and Hammer">🛠️</span>
+                        <h3>Roof Repair & Maintenance</h3>
+                        <p>Prompt and reliable leak detection, storm damage repair, and preventative maintenance to extend your roof's lifespan and protect your investment.</p>
+                    </div>
+                    <div class="service-card">
+                        <span class="icon" role="img" aria-label="Tools">🏗️</span>
+                        <h3>Full Roof Replacement</h3>
+                        <p>When repairs aren't enough, we offer seamless roof replacement services with minimal disruption, ensuring a new, long-lasting, and beautiful roof.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="testimonials">
-  <h2>What Our Customers Say</h2>
-  <div class="t-grid">
-    <div class="t-card">
-      <div class="stars">★★★★★</div>
-      <p>"Colony Roofers replaced our entire roof after hail damage and the process was seamless. They handled the insurance claim too. Couldn't be happier."</p>
-      <div class="reviewer"><div class="avatar">M</div><div><div class="reviewer-name">Marcus T.</div><div class="reviewer-loc">Buckhead, Atlanta</div></div></div>
-    </div>
-    <div class="t-card">
-      <div class="stars">★★★★★</div>
-      <p>"Best roofing company in Atlanta, period. They found damage other roofers missed, fixed it properly, and cleaned up every scrap. A+ service."</p>
-      <div class="reviewer"><div class="avatar">D</div><div><div class="reviewer-name">David R.</div><div class="reviewer-loc">Midtown, Atlanta</div></div></div>
-    </div>
-  </div>
-</section>
+        <!-- Why Choose Us Section -->
+        <section id="why-choose-us">
+            <div class="container">
+                <h2>Why Choose Colony Roofers?</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <span class="icon" role="img" aria-label="Checkmark">✅</span>
+                        <div class="content">
+                            <h3>Unrivaled Local Expertise</h3>
+                            <p>As Atlantans ourselves, we understand the unique weather challenges and architectural styles of our community. We build roofs that last in Georgia.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="icon" role="img" aria-label="Star">⭐</span>
+                        <div class="content">
+                            <h3>Premium Quality Materials</h3>
+                            <p>We partner with industry-leading manufacturers to use only the highest-grade roofing materials, ensuring durability, efficiency, and aesthetic appeal.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="icon" role="img" aria-label="Team">🤝</span>
+                        <div class="content">
+                            <h3>Customer-First Service</h3>
+                            <p>Your satisfaction is our priority. We offer transparent communication, detailed estimates, and a friendly, professional team from start to finish.</p>
+                        </div>
+                    </div>
+                    <div class="benefit-item">
+                        <span class="icon" role="img" aria-label="Shield">🛡️</span>
+                        <div class="content">
+                            <h3>Guaranteed Workmanship</h3>
+                            <p>We stand by our work. All our roofing projects come with robust warranties on both materials and labor, giving you complete peace of mind.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section class="cta" id="contact">
-  <h2>Ready for a Free Roof Inspection?</h2>
-  <p>No pressure, no obligation — just an honest assessment from Atlanta's most trusted roofers.</p>
-  <a href="tel:4045550100" class="btn-white">📞 Call (404) 555-0100</a>
-</section>
+        <!-- Testimonials Section -->
+        <section id="testimonials">
+            <div class="container">
+                <h2>What Our Customers Say</h2>
+                <div class="testimonials-container">
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"Colony Roofers transformed our old, leaky roof into a masterpiece! Their team was professional, efficient, and incredibly knowledgeable. The attention to detail was exceptional. Highly recommend for any roofing needs in Atlanta!"</p>
+                        <div class="author">— Sarah L., Midtown Atlanta</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"After a recent storm, I needed urgent roof repairs. Colony Roofers responded quickly, assessed the damage thoroughly, and provided a fair estimate. The repair was done flawlessly and ahead of schedule. Truly lifesavers!"</p>
+                        <div class="author">— Mark T., Buckhead, GA</div>
+                    </div>
+                    <div class="testimonial-card">
+                        <div class="stars">⭐⭐⭐⭐⭐</div>
+                        <p>"We used Colony Roofers for our commercial property's TPO roof replacement. Their expertise in commercial systems was evident. The project was managed perfectly, stayed within budget, and the new roof looks fantastic. A top-tier company!"</p>
+                        <div class="author">— Emily R., Downtown Business Owner</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
-<footer>
-  <div style="font-size:20px;font-weight:800;">Colony<span style="color:#c17f3d;">.</span></div>
-  <p>© 2024 Colony Roofers · Atlanta, GA · All Rights Reserved</p>
-</footer>
-
+    <!-- Contact/CTA Footer -->
+    <footer id="contact-cta">
+        <div class="footer-content">
+            <h3>Ready for a Reliable Roof?</h3>
+            <p>Don't wait for a leak to become a problem. Contact Colony Roofers today for a free, no-obligation estimate and experience Atlanta's best roofing service.</p>
+            <a href="tel:4704659624" class="cta-button">📞 Get Your FREE Estimate Now</a>
+            <div class="contact-info">
+                <p><span class="icon" role="img" aria-label="Phone">📞</span> <a href="tel:4704659624">(470) 465-9624</a></p>
+                <p><span class="icon" role="img" aria-label="Location Pin">📍</span> 260 Peachtree St NW Suite 2200, Atlanta, GA 30303</p>
+                <p>&copy; 2023 Colony Roofers. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 </body>
 </html>
